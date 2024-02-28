@@ -21,9 +21,11 @@ namespace CuffUncuff
                     continue;
                 }
 
+                // get the player's ped
                 var ped = player.Character;
                 var playerCoords = ped.Position;
 
+                // get the distance between the player and the police player
                 var distance = Vector3.Distance(Game.PlayerPed.Position, playerCoords);
 
                 if (closestPlayer == null || distance < closestDistance)
@@ -33,6 +35,7 @@ namespace CuffUncuff
                 }
             }
 
+            // if a player was found, cuff them
             if (closestPlayer != null)
             {
                 CuffCommand();
@@ -40,11 +43,9 @@ namespace CuffUncuff
         }
         private void CuffCommand()
         {
-            var policePlayer = Game.PlayerPed;
             var cuffedPlayer = Game.PlayerPed.Handle;
             bool isCuffed = API.IsPedCuffed(cuffedPlayer);
             //Check if the player is cuffed already
-            //Get the player closest to the police player
             
             switch (isCuffed)
             {
