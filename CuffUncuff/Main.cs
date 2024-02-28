@@ -1,7 +1,7 @@
 ﻿using CitizenFX.Core;
 using System;
 using CitizenFX.Core.Native;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace CuffUncuff
 {
@@ -9,13 +9,12 @@ namespace CuffUncuff
     {
         [Command("cuff")]
         [Command("uncuff")]
-        
         public void GetClosestPlayer()
         {
             Player closestPlayer = null;
             float closestDistance = -1f;
             // loop through all players
-            foreach (Player player in Players.())
+            foreach (Player player in Players)
             {
                 if (player == Game.Player)
                 {
