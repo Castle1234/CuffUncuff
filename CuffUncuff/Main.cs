@@ -8,7 +8,7 @@ namespace CuffUncuff
     public class Main : BaseScript
     {
         [Command("cuff")]
-        [Command("uncuff")]
+        
         public void GetClosestPlayer()
         {
             Player closestPlayer = null;
